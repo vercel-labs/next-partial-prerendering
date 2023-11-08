@@ -51,43 +51,44 @@ export function Sidebar() {
           hidden: !isOpen,
         })}
       >
-        <div className="space-y-6 p-4">
-          <div className="prose prose-sm prose-invert mt-4 max-w-none pb-16 text-gray-300">
+        <div className="prose prose-sm prose-invert max-w-none space-y-6 px-4 pb-20 text-gray-300">
+          <div className="text-gray-400">
             <p>
-              Partial Prerendering is useful for pages where unique, per-request
-              data coexists with static elements such as sidebars or layouts.
-              This is different from how your application behaves today, where
-              entire routes are either fully static or dynamic.
+              <span className="text-vercel-pink font-bold">Pink dots</span>{' '}
+              denote artificially delayed responses for demo purposes:
             </p>
-            <p>How it works:</p>
             <ul>
-              <li>
-                A static route <em>shell</em> is served immediately, this makes
-                the initial load fast.
-              </li>
-              <li>
-                The shell leaves <em>holes</em> where dynamic content (that
-                might be slower) will be streamed in to minimize the perceived
-                overall page load time.
-              </li>
-              <li>
-                The async holes are loaded in parallel, reducing the overall
-                load time of the page.
-              </li>
+              <li>Shipping estimate → {delayShippingEstimate}ms</li>
+              <li>Recommended products → {delayRecommendedProducts}ms</li>
+              <li>Reviews → {delayReviews}ms</li>
             </ul>
-            <p>Try refreshing the page to restart the demo.</p>
-            <div className="text-gray-400">
-              <p>
-                <span className="text-vercel-pink font-bold">Pink dots</span>{' '}
-                denote artificially delayed responses for demo purposes:
-              </p>
-              <ul>
-                <li>Shipping estimate → {delayShippingEstimate}ms</li>
-                <li>Recommended products → {delayRecommendedProducts}ms</li>
-                <li>Reviews → {delayReviews}ms</li>
-              </ul>
-            </div>
           </div>
+
+          <p>
+            Partial Prerendering is useful for pages where unique, per-request
+            data coexists with static elements such as sidebars or layouts. This
+            is different from how your application behaves today, where entire
+            routes are either fully static or dynamic.
+          </p>
+          <p>How it works:</p>
+          <ul>
+            <li>
+              A static route <em>shell</em> is served immediately, this makes
+              the initial load fast.
+            </li>
+            <li>
+              The shell leaves <em>holes</em> where dynamic content (that might
+              be slower) will be streamed in to minimize the perceived overall
+              page load time.
+            </li>
+            <li>
+              The async holes are loaded in parallel, reducing the overall load
+              time of the page.
+            </li>
+          </ul>
+          <p className="text-gray-400">
+            Try refreshing the page to restart the demo.
+          </p>
         </div>
         <Byline className="absolute hidden sm:block" />
       </div>
