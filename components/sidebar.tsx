@@ -7,6 +7,11 @@ import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
 import { useState } from 'react';
 import Byline from '#/components/byline';
+import {
+  delayRecommendedProducts,
+  delayReviews,
+  delayShippingEstimate,
+} from '#/lib/constants';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,9 +82,9 @@ export function Sidebar() {
                 denote artificially delayed responses for demo purposes:
               </p>
               <ul>
-                <li>Shipping estimate → 1s</li>
-                <li>Recommended products → 3s</li>
-                <li>Reviews → 5s</li>
+                <li>Shipping estimate → {delayShippingEstimate}ms</li>
+                <li>Recommended products → {delayRecommendedProducts}ms</li>
+                <li>Reviews → {delayReviews}ms</li>
               </ul>
             </div>
           </div>

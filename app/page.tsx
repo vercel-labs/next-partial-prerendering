@@ -5,6 +5,7 @@ import {
 import { Reviews, ReviewsSkeleton } from '#/components/reviews';
 import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/components/ping';
+import { delayRecommendedProducts, delayReviews } from '#/lib/constants';
 import { Suspense } from 'react';
 
 export default async function Page() {
@@ -28,7 +29,7 @@ export default async function Page() {
           data={fetch(
             // We intentionally delay the response to simulate a slow data
             // request that would benefit from streaming
-            `https://app-router-api.vercel.app/api/products?delay=3000&filter=1`,
+            `https://app-router-api.vercel.app/api/products?delay=${delayRecommendedProducts}&filter=1`,
             {
               // We intentionally disable Next.js Cache to better demo
               // streaming
@@ -50,7 +51,7 @@ export default async function Page() {
           data={fetch(
             // We intentionally delay the response to simulate a slow data
             // request that would benefit from streaming
-            `https://app-router-api.vercel.app/api/reviews?delay=5000`,
+            `https://app-router-api.vercel.app/api/reviews?delay=${delayReviews}`,
             {
               // We intentionally disable Next.js Cache to better demo
               // streaming
