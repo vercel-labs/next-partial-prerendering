@@ -1,4 +1,4 @@
-import { Pricing } from '#/app/streaming/_components/pricing';
+import { Pricing } from '#/app/streaming/components/pricing';
 import type { Product } from '#/types/product';
 import { ProductRating } from '#/ui/product-rating';
 import Image from 'next/image';

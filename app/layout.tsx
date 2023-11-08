@@ -1,6 +1,6 @@
 import { Boundary } from '#/ui/boundary';
-import { CartCountProvider } from '#/app/streaming/_components/cart-count-context';
-import { Header } from '#/app/streaming/_components/header';
+import { CartCountProvider } from '#/app/streaming/components/cart-count-context';
+import { Header } from '#/app/streaming/components/header';
 import { Metadata } from 'next';
 import './globals.css';
 
