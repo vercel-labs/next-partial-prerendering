@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: "https://next-partial-prerendering.vercel.app",
+  metadataBase: "https://next-partial-prerendering.vercel.rocks",
   title: "Next.js Partial Prerendering",
   description:
     "HTML, staticly and dynamically rendered in a city near you, using Partial Prerendering",
