@@ -39,7 +39,7 @@ function NodeVersion() {
 }
 
 function getRegion() {
-  return process.env.VERCEL_REGION;
+  return process.env.VERCEL_REGION || "";
 }
 
 export default async function Page() {
