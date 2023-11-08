@@ -12,7 +12,7 @@ export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
         <div className="space-y-2">
           <Image
             src={`/${product.image}`}
-            className="hidden rounded-lg grayscale lg:block"
+            className="block rounded-lg grayscale"
             alt={product.name}
             height={400}
             width={400}
