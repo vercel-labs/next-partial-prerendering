@@ -1,9 +1,9 @@
 import {
   RecommendedProducts,
   RecommendedProductsSkeleton,
-} from '#/app/streaming/components/recommended-products';
-import { Reviews, ReviewsSkeleton } from '#/app/streaming/components/reviews';
-import { SingleProduct } from '#/app/streaming/components/single-product';
+} from '#/components/recommended-products';
+import { Reviews, ReviewsSkeleton } from '#/components/reviews';
+import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/ui/ping';
 import { Suspense } from 'react';
 
