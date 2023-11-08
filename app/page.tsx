@@ -1,23 +1,17 @@
-import { Suspense } from "react";
-import { Footer } from "./components/footer";
-import { Region } from "./components/region";
-import { Illustration } from "./components/illustration";
 import { unstable_noStore } from "next/cache";
+import { PropsWithChildren, Suspense } from "react";
+import { Footer } from "./components/footer";
+import { Illustration } from "./components/illustration";
+import { Region } from "./components/region";
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(() => resolve(""), ms));
 }
 
-async function Delay({
-  children,
-  ms,
-}: {
-  children: React.ReactNode;
-  ms: number;
-}) {
+async function Delay({ children, ms }: PropsWithChildren<{ ms: number }>) {
   unstable_noStore();
   await sleep(ms);
-  return children;
+  return <>{children}</>;
 }
 
 function DynamicDate() {
@@ -26,16 +20,16 @@ function DynamicDate() {
 }
 
 function NodeVersion() {
+  unstable_noStore();
+  return <>{process.versions.node}</>;
+}
+
+function Junk({ length = 33000 }: { length?: number }) {
   let longString = "";
-  for (let i = 0; i < 33000; i++) {
+  for (let i = 0; i < length; i++) {
     longString += "a";
   }
-  return (
-    <>
-      {process.versions.node}
-      <span style={{ display: "none" }}>{longString}</span>
-    </>
-  );
+  return <span style={{ display: "none" }}>{longString}</span>;
 }
 
 function getRegion() {
@@ -54,11 +48,13 @@ export default async function Page() {
               Node.js Version
             </span>
             <Suspense fallback={<strong>Loading...</strong>}>
-              {/* @ts-expect-error Async Server Component */}
+              <strong>
+                <NodeVersion />
+              </strong>
+            </Suspense>
+            <Suspense fallback={<Junk length={1} />}>
               <Delay ms={50}>
-                <strong>
-                  <NodeVersion />
-                </strong>
+                <Junk />
               </Delay>
             </Suspense>
           </div>
@@ -71,7 +67,6 @@ export default async function Page() {
                 </span>
               }
             >
-              {/* @ts-expect-error Async Server Component */}
               <Delay ms={3000}>
                 <Region region={getRegion()} />
               </Delay>
