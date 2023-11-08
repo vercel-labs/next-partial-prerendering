@@ -2,12 +2,7 @@ import type { Review } from '#/types/review';
 import { ProductReviewCard } from '#/components/product-review-card';
 import { headers } from 'next/headers';
 
-async function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export async function Reviews({ data }: { data: Promise<Response> }) {
-  await sleep(10000);
   const reviews = (await data.then((res) => res.json())) as Review[];
 
   return (

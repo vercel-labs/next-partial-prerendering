@@ -26,9 +26,9 @@ export default async function Page() {
         <RecommendedProducts
           path="/streaming/node/product"
           data={fetch(
-            // We intentionally delay the reponse to simulate a slow data
+            // We intentionally delay the response to simulate a slow data
             // request that would benefit from streaming
-            `https://app-router-api.vercel.app/api/products?delay=500&filter=1`,
+            `https://app-router-api.vercel.app/api/products?delay=3000&filter=1`,
             {
               // We intentionally disable Next.js Cache to better demo
               // streaming
@@ -48,9 +48,9 @@ export default async function Page() {
         {/* @ts-expect-error Async Server Component */}
         <Reviews
           data={fetch(
-            // We intentionally delay the reponse to simulate a slow data
+            // We intentionally delay the response to simulate a slow data
             // request that would benefit from streaming
-            `https://app-router-api.vercel.app/api/reviews?delay=1000`,
+            `https://app-router-api.vercel.app/api/reviews?delay=5000`,
             {
               // We intentionally disable Next.js Cache to better demo
               // streaming

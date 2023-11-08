@@ -2,10 +2,6 @@ import { Product } from '#/types/product';
 import { ProductCard } from '#/components/product-card';
 import { headers } from 'next/headers';
 
-async function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export async function RecommendedProducts({
   path,
   data,
@@ -14,7 +10,6 @@ export async function RecommendedProducts({
   data: Promise<Response>;
 }) {
   headers();
-  await sleep(5000);
   const products = (await data.then((res) => res.json())) as Product[];
 
   return (
