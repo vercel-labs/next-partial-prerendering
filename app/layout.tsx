@@ -29,23 +29,25 @@ export default function RootLayout({
         <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8">
           <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
             <div className="rounded-lg bg-black p-3.5 lg:p-6">
-              <h1 className="text-xl font-medium text-gray-300">
+              <h1 className="text-xl font-medium">
                 Next.js Partial Prerendering Demo
               </h1>
-              <div className="prose prose-sm prose-invert mb-8 max-w-none">
+              <div className="prose prose-sm prose-invert mb-8 mt-4 max-w-none text-gray-300">
                 <ul>
                   <li>
                     Primary product information is loaded first as part of the
-                    initial response.
+                    initial static response.
                   </li>
                   <li>
-                    Secondary, more personalized details (that might be slower)
+                    Then, personalized dynamic details (that might be slower)
                     like ship date, other recommended products, and customer
-                    reviews are progressively streamed in.
+                    reviews are progressively streamed in, denoted with{' '}
+                    <span className="text-vercel-pink font-bold">
+                      pink dots
+                    </span>
+                    .
                   </li>
-                  <li>
-                    Try refreshing or navigating to other recommended products.
-                  </li>
+                  <li>Try refreshing the page to restart the demo.</li>
                 </ul>
               </div>
               <Boundary
