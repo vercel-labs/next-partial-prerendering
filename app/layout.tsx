@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Next.js Partial Prerendering',
     description: 'A demo of Next.js using Partial Prerendering.',
-    images: [`/api/og?title=Next.js Partial Prerendering`],
   },
   twitter: {
     card: 'summary_large_image',
