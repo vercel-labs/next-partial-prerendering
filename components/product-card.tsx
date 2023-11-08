@@ -7,7 +7,6 @@ import { ProductRating } from '#/components/product-rating';
 import { ProductUsedPrice } from '#/components/product-used-price';
 import { dinero, type DineroSnapshot } from 'dinero.js';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const ProductCard = ({
   product,
@@ -19,7 +18,7 @@ export const ProductCard = ({
   const price = dinero(product.price as DineroSnapshot<number>);
 
   return (
-    <Link href={href} className="group block">
+    <div className="group block">
       <div className="space-y-2">
         <div className="relative">
           {product.isBestSeller ? (
@@ -58,6 +57,6 @@ export const ProductCard = ({
           <ProductLowStockWarning stock={product.stock} />
         ) : null}
       </div>
-    </Link>
+    </div>
   );
 };

@@ -1,7 +1,6 @@
 import { NextLogo } from '#/components/next-logo';
 import { SearchIcon, ShoppingCartIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
-import Link from 'next/link';
 import { CartCount } from '#/components/cart-count';
 import { cookies } from 'next/headers';
 import { Suspense } from 'react';
@@ -15,11 +14,9 @@ export function Header() {
   return (
     <div className="flex items-center justify-between gap-x-3 rounded-lg bg-gray-800 px-3 py-3 lg:px-5 lg:py-4">
       <div className="flex gap-x-3">
-        <Link href="/streaming">
-          <div className="h-10 w-10 hover:opacity-70">
-            <NextLogo />
-          </div>
-        </Link>
+        <div className="h-10 w-10 hover:opacity-70">
+          <NextLogo />
+        </div>
 
         <div className="relative flex-1">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
