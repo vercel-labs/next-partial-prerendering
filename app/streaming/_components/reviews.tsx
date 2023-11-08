@@ -1,5 +1,5 @@
 import type { Review } from '#/types/review';
-import { ProductReviewCard } from '#/components/product-review-card';
+import { ProductReviewCard } from '#/ui/product-review-card';
 import { headers } from 'next/headers';
 
 async function sleep(ms: number) {

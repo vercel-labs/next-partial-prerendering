@@ -1,5 +1,5 @@
 import { Product } from '#/types/product';
-import { ProductCard } from '#/components/product-card';
+import { ProductCard } from '#/ui/product-card';
 import { headers } from 'next/headers';
 
 async function sleep(ms: number) {

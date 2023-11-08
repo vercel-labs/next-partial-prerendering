@@ -1,13 +1,13 @@
 import type { Product } from '#/types/product';
-import { Ping } from '#/components/ping';
-import { ProductEstimatedArrival } from '#/components/product-estimated-arrival';
-import { ProductLowStockWarning } from '#/components/product-low-stock-warning';
-import { ProductPrice } from '#/components/product-price';
-import { ProductSplitPayments } from '#/components/product-split-payments';
-import { ProductUsedPrice } from '#/components/product-used-price';
+import { Ping } from '#/ui/ping';
+import { ProductEstimatedArrival } from '#/ui/product-estimated-arrival';
+import { ProductLowStockWarning } from '#/ui/product-low-stock-warning';
+import { ProductPrice } from '#/ui/product-price';
+import { ProductSplitPayments } from '#/ui/product-split-payments';
+import { ProductUsedPrice } from '#/ui/product-used-price';
 import { dinero, type DineroSnapshot } from 'dinero.js';
 import { Suspense } from 'react';
-import { AddToCart } from '#/components/add-to-cart';
+import { AddToCart } from './add-to-cart';
 import { cookies } from 'next/headers';
 
 async function AddToCartFromCookies() {

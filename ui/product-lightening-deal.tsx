@@ -1,4 +1,4 @@
-import { ProductDeal } from '#/components/product-deal';
+import { ProductDeal } from '#/ui/product-deal';
 import { add, formatDistanceToNow } from 'date-fns';
 import { type Dinero } from 'dinero.js';
 
