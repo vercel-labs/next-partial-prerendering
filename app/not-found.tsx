@@ -1,4 +1,4 @@
-import { Boundary } from '#/ui/boundary';
+import { Boundary } from '#/components/boundary';
 
 export default function NotFound() {
   return (

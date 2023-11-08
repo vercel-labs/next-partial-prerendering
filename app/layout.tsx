@@ -1,4 +1,4 @@
-import { Boundary } from '#/ui/boundary';
+import { Boundary } from '#/components/boundary';
 import { CartCountProvider } from '#/components/cart-count-context';
 import { Header } from '#/components/header';
 import { Metadata } from 'next';

@@ -4,7 +4,7 @@ import {
 } from '#/components/recommended-products';
 import { Reviews, ReviewsSkeleton } from '#/components/reviews';
 import { SingleProduct } from '#/components/single-product';
-import { Ping } from '#/ui/ping';
+import { Ping } from '#/components/ping';
 import { Suspense } from 'react';
 
 export default async function Page() {

@@ -1,4 +1,4 @@
-import { ProductCurrencySymbol } from '#/ui/product-currency-symbol';
+import { ProductCurrencySymbol } from '#/components/product-currency-symbol';
 import { toUnit, type Dinero } from 'dinero.js';
 
 export const ProductDeal = ({

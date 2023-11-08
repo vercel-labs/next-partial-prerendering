@@ -1,4 +1,4 @@
-import { Boundary } from '#/ui/boundary';
+import { Boundary } from '#/components/boundary';
 import CountUp from '#/ui/count-up';
 import clsx from 'clsx';
 

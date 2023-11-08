@@ -1,6 +1,6 @@
 import { Pricing } from '#/components/pricing';
 import type { Product } from '#/types/product';
-import { ProductRating } from '#/ui/product-rating';
+import { ProductRating } from '#/components/product-rating';
 import Image from 'next/image';
 
 export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {

@@ -1,8 +1,8 @@
-import { NextLogo } from '#/ui/next-logo';
+import { NextLogo } from '#/components/next-logo';
 import { SearchIcon, ShoppingCartIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CartCount } from './cart-count';
+import { CartCount } from '#/components/cart-count';
 import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 
