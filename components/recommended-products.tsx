@@ -26,7 +26,7 @@ export async function RecommendedProducts({
         {products.map((product) => (
           <div key={product.id} className="col-span-2 md:col-span-1">
             <ProductCard product={product} href={`${path}/${product.id}`} />
-            <div hidden>Extra content</div>
+            <div hidden>Extra</div>
           </div>
         ))}
       </div>
