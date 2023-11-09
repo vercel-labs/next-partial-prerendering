@@ -1,7 +1,7 @@
 'use client';
 
 import { NextLogo } from '#/components/next-logo';
-import { Bars3Icon, XMarkIcon  } from '@heroicons/react/24/solid';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -52,7 +52,7 @@ export function Sidebar() {
         <div className="prose prose-sm prose-invert max-w-none space-y-6 px-4 pb-20 text-gray-300">
           <div className="text-gray-400">
             <p>
-              <span className="text-vercel-pink font-bold">Pink dots</span>{' '}
+              <span className="font-bold text-vercel-pink">Pink dots</span>{' '}
               denote artificially delayed responses for demo purposes:
             </p>
             <ul>
