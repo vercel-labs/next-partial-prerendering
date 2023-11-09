@@ -1,5 +1,5 @@
 import { NextLogo } from '#/components/next-logo';
-import { SearchIcon, ShoppingCartIcon } from '@heroicons/react/solid';
+import { MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { CartCount } from '#/components/cart-count';
 import { cookies } from 'next/headers';
@@ -20,7 +20,7 @@ export function Header() {
 
         <div className="relative flex-1">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <SearchIcon className="h-5 w-5 text-gray-300" />
+            <MagnifyingGlassIcon className="h-5 w-5 text-gray-300" />
           </div>
           <input
             aria-label="Search"
@@ -38,7 +38,6 @@ export function Header() {
           <ShoppingCartIcon className="w-6 text-white" />
           <div className="bg-vercel-cyan absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full text-sm font-bold text-cyan-800">
             <Suspense fallback={<span></span>}>
-              {/* @ts-expect-error Async Server Component */}
               <CartCountFromCookies />
             </Suspense>
           </div>

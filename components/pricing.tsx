@@ -78,12 +78,10 @@ export function Pricing({ product }: { product: Product }) {
       </div>
 
       <Suspense fallback={<LoadingDots />}>
-        {/* @ts-expect-error Async Server Component */}
         <UserSpecificDetails productId={product.id} />
       </Suspense>
 
       <Suspense fallback={<AddToCart initialCartCount={0} />}>
-        {/* @ts-expect-error Async Server Component */}
         <AddToCartFromCookies />
       </Suspense>
     </div>

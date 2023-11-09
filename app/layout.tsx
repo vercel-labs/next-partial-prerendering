@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nextjs-partial-prerendering.vercel.app/'),
+  metadataBase: new URL('https://partialprerendering.com'),
   title: 'Next.js Partial Prerendering',
   description: 'A demo of Next.js using Partial Prerendering.',
   openGraph: {

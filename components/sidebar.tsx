@@ -1,9 +1,8 @@
 'use client';
 
 import { NextLogo } from '#/components/next-logo';
-import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
+import { Bars3Icon, XMarkIcon  } from '@heroicons/react/24/solid';
+
 import clsx from 'clsx';
 import { useState } from 'react';
 import Byline from '#/components/byline';
@@ -15,7 +14,6 @@ import {
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const close = () => setIsOpen(false);
 
   return (
     <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-black lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
@@ -39,9 +37,9 @@ export function Sidebar() {
           Menu
         </div>
         {isOpen ? (
-          <XIcon className="block w-6 text-gray-400" />
+          <XMarkIcon className="block w-6 text-gray-400" />
         ) : (
-          <MenuAlt2Icon className="block w-6 text-gray-400" />
+          <Bars3Icon className="block w-6 text-gray-400" />
         )}
       </button>
 
