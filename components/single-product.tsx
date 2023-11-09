@@ -8,7 +8,7 @@ export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
 
   return (
     <div className="grid grid-cols-4 gap-6">
-      <div className="col-span-full lg:col-span-1">
+      <div className="col-span-2 md:order-1 md:col-span-1">
         <div className="space-y-2">
           <Image
             src={`/${product.image}`}
@@ -54,7 +54,11 @@ export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
         </div>
       </div>
 
-      <div className="col-span-full space-y-4 lg:col-span-2">
+      <div className="col-span-2 md:order-3 md:col-span-1">
+        <Pricing product={product} />
+      </div>
+
+      <div className="col-span-full space-y-4 md:order-2 md:col-span-2">
         <div className="truncate text-xl font-medium text-white lg:text-2xl">
           {product.name}
         </div>
@@ -65,10 +69,6 @@ export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
           <p>{product.description}</p>
           <p>{product.description}</p>
         </div>
-      </div>
-
-      <div className="col-span-full lg:col-span-1">
-        <Pricing product={product} />
       </div>
     </div>
   );
