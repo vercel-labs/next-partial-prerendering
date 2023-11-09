@@ -14,7 +14,7 @@ export async function RecommendedProducts({
   const products = (await data.then((res) => res.json())) as Product[];
 
   let extra = '';
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 10000; i++) {
     extra += nanoid(32);
   }
 
