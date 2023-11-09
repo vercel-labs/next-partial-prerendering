@@ -63,10 +63,16 @@ export function Sidebar() {
           </div>
 
           <p>
-            Partial Prerendering is useful for pages where unique, per-request
-            data coexists with static elements such as sidebars or layouts. This
-            is different from how your application behaves today, where entire
-            routes are either fully static or dynamic.
+            <a
+              target="_blank"
+              href="https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model"
+            >
+              Partial Prerendering
+            </a>{' '}
+            is useful for pages where unique, per-request data coexists with
+            static elements such as sidebars or layouts. This is different from
+            how your application behaves today, where entire routes are either
+            fully static or dynamic.
           </p>
           <p>How it works:</p>
           <ul>
@@ -82,6 +88,14 @@ export function Sidebar() {
             <li>
               The async holes are loaded in parallel, reducing the overall load
               time of the page.
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model"
+              >
+                More Info
+              </a>
             </li>
           </ul>
           <p className="text-gray-400">
