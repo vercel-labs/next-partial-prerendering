@@ -14,11 +14,8 @@ export default async function Page() {
       <SingleProduct
         data={fetch(`https://app-router-api.vercel.app/api/products?id=1`)}
       />
-      <div className="relative">
-        <div className="absolute -left-4 top-2">
-          <Ping />
-        </div>
-      </div>
+
+      <Ping />
 
       <Suspense fallback={<RecommendedProductsSkeleton />}>
         <RecommendedProducts
@@ -36,11 +33,7 @@ export default async function Page() {
         />
       </Suspense>
 
-      <div className="relative">
-        <div className="absolute -left-4 top-2">
-          <Ping />
-        </div>
-      </div>
+      <Ping />
 
       <Suspense fallback={<ReviewsSkeleton />}>
         <Reviews

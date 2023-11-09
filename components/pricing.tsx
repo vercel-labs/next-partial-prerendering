@@ -71,11 +71,7 @@ export function Pricing({ product }: { product: Product }) {
     <div className="space-y-4 rounded-lg bg-gray-900 p-3">
       <ProductPrice price={price} discount={product.discount} />
 
-      <div className="relative">
-        <div className="absolute -left-4 top-1">
-          <Ping />
-        </div>
-      </div>
+      <Ping />
 
       <Suspense fallback={<LoadingDots />}>
         <UserSpecificDetails productId={product.id} />
