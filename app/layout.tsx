@@ -2,6 +2,7 @@ import { Boundary } from '#/components/boundary';
 import { CartCountProvider } from '#/components/cart-count-context';
 import { Header } from '#/components/header';
 import { Sidebar } from '#/components/sidebar';
+import { GeistSans } from 'geist/font/sans';
 import { Metadata } from 'next';
 import './globals.css';
 
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="[color-scheme:dark]">
+    <html lang="en" className={`[color-scheme:dark] ${GeistSans.variable}`}>
       <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')] pb-36">
         <Sidebar />
         <div className="lg:pl-72">
