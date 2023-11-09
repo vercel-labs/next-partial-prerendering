@@ -1,6 +1,7 @@
 import { Product } from '#/types/product';
 import { ProductCard } from '#/components/product-card';
 import { headers } from 'next/headers';
+import { nanoid } from 'nanoid';
 
 export async function RecommendedProducts({
   path,
@@ -11,6 +12,11 @@ export async function RecommendedProducts({
 }) {
   headers();
   const products = (await data.then((res) => res.json())) as Product[];
+
+  let extra = '';
+  for (let i = 0; i < 1000; i++) {
+    extra += nanoid(32);
+  }
 
   return (
     <div className="space-y-6" data-headers={headers()}>
@@ -29,7 +35,7 @@ export async function RecommendedProducts({
           </div>
         ))}
       </div>
-      <div hidden></div>
+      <div hidden>{extra}</div>
     </div>
   );
 }
