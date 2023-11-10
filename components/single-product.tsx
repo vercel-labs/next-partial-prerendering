@@ -10,43 +10,45 @@ export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
     <div className="grid grid-cols-4 gap-6">
       <div className="col-span-2 md:order-1 md:col-span-1">
         <div className="space-y-2">
-          <Image
-            src={`/${product.image}`}
-            className="block rounded-lg grayscale"
-            alt={product.name}
-            height={400}
-            width={400}
-            priority
-          />
+          <div className="relative aspect-square">
+            <Image
+              src={`/${product.image}`}
+              className="block rounded-lg grayscale"
+              alt={product.name}
+              fill
+              sizes="(min-width: 1184px) 200px, (min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+              priority
+            />
+          </div>
 
           <div className="flex gap-x-2">
-            <div className="w-1/3">
+            <div className="relative aspect-square w-1/3">
               <Image
                 src={`/${product.image}`}
                 className="rounded-lg grayscale"
                 alt={product.name}
-                height={180}
-                width={180}
+                fill
+                sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
                 priority
               />
             </div>
-            <div className="w-1/3">
+            <div className="relative aspect-square w-1/3">
               <Image
                 src={`/${product.image}`}
                 className="rounded-lg grayscale"
                 alt={product.name}
-                height={180}
-                width={180}
+                fill
+                sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
                 priority
               />
             </div>
-            <div className="w-1/3">
+            <div className="relative aspect-square w-1/3">
               <Image
                 src={`/${product.image}`}
                 className="rounded-lg grayscale"
                 alt={product.name}
-                height={180}
-                width={180}
+                fill
+                sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
                 priority
               />
             </div>
