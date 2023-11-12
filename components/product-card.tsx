@@ -8,13 +8,7 @@ import { ProductUsedPrice } from '#/components/product-used-price';
 import { dinero, type DineroSnapshot } from 'dinero.js';
 import Image from 'next/image';
 
-export const ProductCard = ({
-  product,
-  href,
-}: {
-  product: Product;
-  href: string;
-}) => {
+export const ProductCard = ({ product }: { product: Product }) => {
   const price = dinero(product.price as DineroSnapshot<number>);
 
   return (
@@ -44,8 +38,6 @@ export const ProductCard = ({
         {product.rating ? <ProductRating rating={product.rating} /> : null}
 
         <ProductPrice price={price} discount={product.discount} />
-
-        {/* <ProductSplitPayments price={price} /> */}
 
         {product.usedPrice ? (
           <ProductUsedPrice usedPrice={product.usedPrice} />

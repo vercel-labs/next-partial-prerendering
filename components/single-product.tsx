@@ -3,8 +3,10 @@ import type { Product } from '#/types/product';
 import { ProductRating } from '#/components/product-rating';
 import Image from 'next/image';
 
-export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
-  const product = (await data.then((res) => res.json())) as Product;
+export async function SingleProduct() {
+  const product: Product = await fetch(
+    `https://app-router-api.vercel.app/api/products?id=1`,
+  ).then((res) => res.json());
 
   return (
     <div className="grid grid-cols-4 gap-6">
@@ -74,4 +76,4 @@ export const SingleProduct = async ({ data }: { data: Promise<Response> }) => {
       </div>
     </div>
   );
-};
+}

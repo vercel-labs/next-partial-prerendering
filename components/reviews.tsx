@@ -1,9 +1,19 @@
 import type { Review } from '#/types/review';
 import { ProductReviewCard } from '#/components/product-review-card';
 import { headers } from 'next/headers';
+import { delayReviews } from '#/lib/constants';
 
-export async function Reviews({ data }: { data: Promise<Response> }) {
-  const reviews = (await data.then((res) => res.json())) as Review[];
+export async function Reviews() {
+  let reviews: Review[] = await fetch(
+    // We intentionally delay the response to simulate a slow data
+    // request that would benefit from streaming
+    `https://app-router-api.vercel.app/api/reviews?delay=${delayReviews}`,
+    {
+      // We intentionally disable Next.js Cache to better demo
+      // streaming
+      cache: 'no-store',
+    },
+  ).then((res) => res.json());
 
   return (
     <div className="space-y-6" data-headers={headers()}>
@@ -34,7 +44,6 @@ export function ReviewsSkeleton() {
   return (
     <div className="space-y-6">
       <div className={`h-7 w-2/5 rounded-lg bg-gray-900 ${shimmer}`} />
-
       <div className="space-y-8">
         <Skeleton />
         <Skeleton />
