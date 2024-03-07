@@ -9,12 +9,12 @@ import { Ping } from '#/components/ping';
 
 type Props = {
   searchParams: {
-    abTest: string;
+    viewport: string;
   };
 };
 
 export default function Page({ searchParams }: Props) {
-  const aBTestPath = searchParams?.abTest ?? 'A';
+  const viewport = searchParams?.viewport
 
   return (
     <div className="space-y-8 lg:space-y-14">
@@ -22,7 +22,7 @@ export default function Page({ searchParams }: Props) {
 
       <Ping />
 
-      {aBTestPath === 'A' && (
+      {viewport === 'desktop' && (
         <>
           <Suspense fallback={<RecommendedProductsSkeleton />}>
             <RecommendedProducts />
@@ -36,7 +36,7 @@ export default function Page({ searchParams }: Props) {
         </>
       )}
 
-      {aBTestPath === 'B' && (
+      {viewport === 'mobile' && (
         <>
           <Ping />
 
