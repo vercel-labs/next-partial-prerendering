@@ -45,15 +45,6 @@ export function Header() {
             </Suspense>
           </div>
         </div>
-
-        <Image
-          src="/prince-akachi-LWkFHEGpleE-unsplash.jpg"
-          className="rounded-full"
-          width={40}
-          height={40}
-          alt="User"
-          priority
-        />
       </div>
     </div>
   );

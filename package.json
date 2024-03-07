@@ -19,10 +19,12 @@
   },
   "dependencies": {
     "@heroicons/react": "2.1.1",
+    "@vercel/speed-insights": "1.0.10",
     "clsx": "2.1.0",
     "date-fns": "3.1.0",
     "dinero.js": "2.0.0-alpha.8",
     "geist": "1.2.0",
+    "i": "0.3.7",
     "next": "14.0.5-canary.42",
     "react": "18.2.0",
     "react-dom": "18.2.0"

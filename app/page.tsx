@@ -7,7 +7,13 @@ import { Reviews, ReviewsSkeleton } from '#/components/reviews';
 import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/components/ping';
 
-export default function Page() {
+type Props = {
+  searchParams: {
+    returnedUser: boolean;
+  };
+};
+
+export default function Page({ searchParams }: Props) {
   return (
     <div className="space-y-8 lg:space-y-14">
       <SingleProduct />
@@ -15,7 +21,7 @@ export default function Page() {
       <Ping />
 
       <Suspense fallback={<RecommendedProductsSkeleton />}>
-        <RecommendedProducts />
+        <RecommendedProducts isReturnedUser={!!searchParams?.returnedUser} />
       </Suspense>
 
       <Ping />

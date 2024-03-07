@@ -3,7 +3,11 @@ import { ProductCard } from '#/components/product-card';
 import { headers } from 'next/headers';
 import { delayRecommendedProducts } from '#/lib/constants';
 
-export async function RecommendedProducts() {
+export async function RecommendedProducts({ isReturnedUser }) {
+  if (!isReturnedUser) {
+    return null;
+  }
+
   headers();
   let products: Product[] = await fetch(
     // We intentionally delay the response to simulate a slow data
