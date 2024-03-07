@@ -9,14 +9,12 @@ import { Ping } from '#/components/ping';
 
 type Props = {
   searchParams: {
-    productPageLayoutTest: string;
+    abTest: string;
   };
 };
 
 export default function Page({ searchParams }: Props) {
-  const aBTestPath = searchParams?.productPageLayoutTest ?? 'A';
-
-  console.log({ aBTestPath })
+  const aBTestPath = searchParams?.abTest ?? 'A';
 
   return (
     <div className="space-y-8 lg:space-y-14">
