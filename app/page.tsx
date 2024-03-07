@@ -7,22 +7,50 @@ import { Reviews, ReviewsSkeleton } from '#/components/reviews';
 import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/components/ping';
 
-export default function Page() {
+type Props = {
+  searchParams: {
+    productPageLayoutTest: string;
+  };
+};
+
+export default function Page({ searchParams }: Props) {
+  const aBTestPath = searchParams?.productPageLayoutTest ?? 'A';
+
+  console.log({ aBTestPath })
+
   return (
     <div className="space-y-8 lg:space-y-14">
       <SingleProduct />
 
       <Ping />
 
-      <Suspense fallback={<RecommendedProductsSkeleton />}>
-        <RecommendedProducts />
-      </Suspense>
+      {aBTestPath === 'A' && (
+        <>
+          <Suspense fallback={<RecommendedProductsSkeleton />}>
+            <RecommendedProducts />
+          </Suspense>
 
-      <Ping />
+          <Ping />
 
-      <Suspense fallback={<ReviewsSkeleton />}>
-        <Reviews />
-      </Suspense>
+          <Suspense fallback={<ReviewsSkeleton />}>
+            <Reviews />
+          </Suspense>
+        </>
+      )}
+
+      {aBTestPath === 'B' && (
+        <>
+          <Ping />
+
+          <Suspense fallback={<ReviewsSkeleton />}>
+            <Reviews />
+          </Suspense>
+
+          <Suspense fallback={<RecommendedProductsSkeleton />}>
+            <RecommendedProducts />
+          </Suspense>
+        </>
+      )}
     </div>
   );
 }
