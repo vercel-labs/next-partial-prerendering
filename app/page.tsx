@@ -8,16 +8,7 @@ import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/components/ping';
 import { headers } from 'next/headers';
 
-const i18n = {
-  'fr-FR': 'Découvrez ce produit',
-}
-
-export default function Page({ searchParams }: Props) {
-  const headersList = headers();
-  const locale = headersList.get('x-locale')
-
-  console.log({ locale })
-
+export default function Page() {
   return (
     <div className="space-y-8 lg:space-y-14">
       <SingleProduct />

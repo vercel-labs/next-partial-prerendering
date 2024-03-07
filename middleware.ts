@@ -7,7 +7,6 @@ export function middleware(request: NextRequest) {
   const headers = new Headers(request.headers)
   headers.set('x-locale', locale!)
 
-
     return NextResponse.next({
       request: {
         headers,
