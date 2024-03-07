@@ -8,6 +8,9 @@ dependencies:
   '@heroicons/react':
     specifier: 2.1.1
     version: 2.1.1(react@18.2.0)
+  '@vercel/speed-insights':
+    specifier: 1.0.10
+    version: 1.0.10(next@14.0.5-canary.42)(react@18.2.0)
   clsx:
     specifier: 2.1.0
     version: 2.1.0
@@ -20,6 +23,9 @@ dependencies:
   geist:
     specifier: 1.2.0
     version: 1.2.0(next@14.0.5-canary.42)
+  i:
+    specifier: 0.3.7
+    version: 0.3.7
   next:
     specifier: 14.0.5-canary.42
     version: 14.0.5-canary.42(react-dom@18.2.0)(react@18.2.0)
@@ -472,6 +478,34 @@ packages:
     resolution: {integrity: sha512-OxDFAAdyiJ/H0b8zR9rFCu3BIb78LekBXOphOYG3snV4ULhKFX387pBPpqZ9HLiRTejBWBxYEahkw79tuIgdAA==}
     requiresBuild: true
     dev: true
+
+  /@vercel/speed-insights@1.0.10(next@14.0.5-canary.42)(react@18.2.0):
+    resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
+    requiresBuild: true
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19
+      svelte: ^4
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      next: 14.0.5-canary.42(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.2):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1640,6 +1674,11 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
     dev: true
+
+  /i@0.3.7:
+    resolution: {integrity: sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==}
+    engines: {node: '>=0.4'}
+    dev: false
 
   /ignore@5.3.0:
     resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
