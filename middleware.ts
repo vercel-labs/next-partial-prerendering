@@ -11,3 +11,7 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.rewrite(request.nextUrl);
 }
+
+export const config = {
+  matcher: '/',
+}
