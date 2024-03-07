@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  if (!!request.cookies.get('productPageLayoutTest')) {
+  if (!!request.cookies.get('abTest')) {
     request.nextUrl.searchParams.set(
-      'productPageLayoutTest',
-      request.cookies.get('productPageLayoutTest')!.value
+      'abTest',
+      request.cookies.get('abTest')!.value
     );
   }
 
