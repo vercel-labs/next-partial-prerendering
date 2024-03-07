@@ -1,6 +1,7 @@
 import { CartCountProvider } from '#/components/cart-count-context';
 import { Header } from '#/components/header';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
 import { GeistSans } from 'geist/font/sans';
 import { Metadata } from 'next';
 import './globals.css';
@@ -42,6 +43,7 @@ export default function RootLayout({
         </div>
 
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
