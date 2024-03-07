@@ -2,8 +2,16 @@ import { Pricing } from '#/components/pricing';
 import type { Product } from '#/types/product';
 import { ProductRating } from '#/components/product-rating';
 import Image from 'next/image';
+import { headers } from 'next/headers';
+
+const i18nTitle: Record<string, string> = {
+  'fr-FR': 'Découvrez ce produit',
+}
 
 export async function SingleProduct() {
+  const headersList = headers();
+  const locale = headersList.get('x-locale')!
+
   const product: Product = await fetch(
     `https://app-router-api.vercel.app/api/products?id=1`,
   ).then((res) => res.json());
@@ -64,7 +72,7 @@ export async function SingleProduct() {
 
       <div className="col-span-full space-y-4 md:order-2 md:col-span-2">
         <div className="truncate text-xl font-medium text-white lg:text-2xl">
-          {product.name}
+          {i18nTitle[locale] ? i18nTitle[locale] : product.name}
         </div>
 
         <ProductRating rating={product.rating} />

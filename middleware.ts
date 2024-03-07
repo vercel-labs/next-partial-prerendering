@@ -2,14 +2,15 @@ import { NextResponse, userAgent } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const { device } = userAgent(request)
+  const locale = request.headers.get('accept-language')
 
-  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop'
-  request.nextUrl.searchParams.set('viewport', viewport)
+  const headers = new Headers(request.headers)
+  headers.set('x-locale', locale!)
 
-  return NextResponse.rewrite(request.nextUrl);
-}
 
-export const config = {
-  matcher: '/',
+    return NextResponse.next({
+      request: {
+        headers,
+      },
+    })
 }

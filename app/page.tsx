@@ -6,15 +6,17 @@ import {
 import { Reviews, ReviewsSkeleton } from '#/components/reviews';
 import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/components/ping';
+import { headers } from 'next/headers';
 
-type Props = {
-  searchParams: {
-    viewport: string;
-  };
-};
+const i18n = {
+  'fr-FR': 'Découvrez ce produit',
+}
 
 export default function Page({ searchParams }: Props) {
-  const viewport = searchParams?.viewport
+  const headersList = headers();
+  const locale = headersList.get('x-locale')
+
+  console.log({ locale })
 
   return (
     <div className="space-y-8 lg:space-y-14">
@@ -22,33 +24,15 @@ export default function Page({ searchParams }: Props) {
 
       <Ping />
 
-      {viewport === 'desktop' && (
-        <>
-          <Suspense fallback={<RecommendedProductsSkeleton />}>
-            <RecommendedProducts />
-          </Suspense>
+      <Suspense fallback={<RecommendedProductsSkeleton />}>
+        <RecommendedProducts />
+      </Suspense>
 
-          <Ping />
+      <Ping />
 
-          <Suspense fallback={<ReviewsSkeleton />}>
-            <Reviews />
-          </Suspense>
-        </>
-      )}
-
-      {viewport === 'mobile' && (
-        <>
-          <Ping />
-
-          <Suspense fallback={<ReviewsSkeleton />}>
-            <Reviews />
-          </Suspense>
-
-          <Suspense fallback={<RecommendedProductsSkeleton />}>
-            <RecommendedProducts />
-          </Suspense>
-        </>
-      )}
+      <Suspense fallback={<ReviewsSkeleton />}>
+        <Reviews />
+      </Suspense>
     </div>
   );
 }
