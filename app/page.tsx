@@ -6,7 +6,6 @@ import {
 import { Reviews, ReviewsSkeleton } from '#/components/reviews';
 import { SingleProduct } from '#/components/single-product';
 import { Ping } from '#/components/ping';
-import { headers } from 'next/headers';
 
 export default function Page() {
   return (
