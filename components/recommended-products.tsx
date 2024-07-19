@@ -1,20 +1,23 @@
 import { Product } from '#/types/product';
 import { ProductCard } from '#/components/product-card';
 import { headers } from 'next/headers';
-import { delayRecommendedProducts } from '#/lib/constants';
+import { delayRecommendedProducts, withDelay } from '#/lib/delay';
 
 export async function RecommendedProducts() {
   headers();
-  let products: Product[] = await fetch(
-    // We intentionally delay the response to simulate a slow data
-    // request that would benefit from streaming
-    `https://app-router-api.vercel.app/api/products?delay=${delayRecommendedProducts}&filter=1`,
-    {
-      // We intentionally disable Next.js Cache to better demo
-      // streaming
-      cache: 'no-store',
-    },
-  ).then((res) => res.json());
+  let products: Product[] = await withDelay(
+    fetch(
+      // We intentionally delay the response to simulate a slow data
+      // request that would benefit from streaming
+      `https://app-router-api.vercel.app/api/products?filter=1`,
+      {
+        // We intentionally disable Next.js Cache to better demo
+        // streaming
+        cache: 'no-store',
+      }
+    ).then((res) => res.json()),
+    delayRecommendedProducts
+  );
 
   return (
     <div className="space-y-6" data-headers={headers()}>

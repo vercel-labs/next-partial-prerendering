@@ -8,7 +8,7 @@ import { ProductUsedPrice } from '#/components/product-used-price';
 import { dinero, type DineroSnapshot } from 'dinero.js';
 import { Suspense } from 'react';
 import { AddToCart } from '#/components/add-to-cart';
-import { delayShippingEstimate } from '#/lib/constants';
+import { delayShippingEstimate, withDelay } from '#/lib/delay';
 import { cookies } from 'next/headers';
 
 async function AddToCartFromCookies() {
@@ -37,13 +37,16 @@ function LoadingDots() {
 }
 
 async function UserSpecificDetails({ productId }: { productId: string }) {
-  const data = await fetch(
-    `https://app-router-api.vercel.app/api/products?id=${productId}&delay=${delayShippingEstimate}&filter=price,usedPrice,leadTime,stock`,
-    {
-      // We intentionally disable Next.js Cache to better demo
-      // streaming
-      cache: 'no-store',
-    },
+  const data = await withDelay(
+    fetch(
+      `https://app-router-api.vercel.app/api/products?id=${productId}&filter=price,usedPrice,leadTime,stock`,
+      {
+        // We intentionally disable Next.js Cache to better demo
+        // streaming
+        cache: 'no-store',
+      }
+    ),
+    delayShippingEstimate
   );
 
   const product = (await data.json()) as Product;
