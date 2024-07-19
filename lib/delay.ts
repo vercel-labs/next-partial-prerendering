@@ -3,10 +3,15 @@ export const delayShippingEstimate = 200;
 export const delayRecommendedProducts = 500;
 export const delayReviews = 600;
 
-export function withDelay<T>(promise: Promise<T>, delay: number): Promise<T> {
+export async function withDelay<T>(
+  promise: Promise<T>,
+  delay: number
+): Promise<T> {
+  // Ensure we throw if this throws
+  const ret = await promise;
   return new Promise((resolve) => {
     setTimeout(() => {
-      promise.then(resolve);
+      resolve(ret);
     }, delay);
   });
 }
