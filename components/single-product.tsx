@@ -1,11 +1,11 @@
-import { Pricing } from '#/components/pricing';
-import type { Product } from '#/types/product';
-import { ProductRating } from '#/components/product-rating';
-import Image from 'next/image';
+import { Pricing } from "#/components/pricing";
+import type { Product } from "#/types/product";
+import { ProductRating } from "#/components/product-rating";
+import Image from "next/image";
 
 export async function SingleProduct() {
   const product: Product = await fetch(
-    `https://app-router-api.vercel.app/api/products?id=1`,
+    `https://app-router-api.vercel.app/api/products?id=1`
   ).then((res) => res.json());
 
   return (
@@ -31,7 +31,7 @@ export async function SingleProduct() {
                 alt={product.name}
                 fill
                 sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
-                priority
+                loading="lazy"
               />
             </div>
             <div className="relative aspect-square w-1/3">
@@ -41,7 +41,7 @@ export async function SingleProduct() {
                 alt={product.name}
                 fill
                 sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
-                priority
+                loading="lazy"
               />
             </div>
             <div className="relative aspect-square w-1/3">
@@ -51,7 +51,7 @@ export async function SingleProduct() {
                 alt={product.name}
                 fill
                 sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
-                priority
+                loading="lazy"
               />
             </div>
           </div>
