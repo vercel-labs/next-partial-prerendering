@@ -1,20 +1,19 @@
-import { CartCountProvider } from '#/components/cart-count-context';
-import { Header } from '#/components/header';
-import { Sidebar } from '#/components/sidebar';
-import { GeistSans } from 'geist/font/sans';
-import { Metadata } from 'next';
-import './globals.css';
+import { CartCountProvider } from "#/components/cart-count-context";
+import { Header } from "#/components/header";
+import { Sidebar } from "#/components/sidebar";
+import { Metadata } from "next";
+import { GlobalStyles } from "./styles";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://partialprerendering.com'),
-  title: 'Next.js Partial Prerendering',
-  description: 'A demo of Next.js using Partial Prerendering.',
+  metadataBase: new URL("https://partialprerendering.com"),
+  title: "Next.js Partial Prerendering",
+  description: "A demo of Next.js using Partial Prerendering.",
   openGraph: {
-    title: 'Next.js Partial Prerendering',
-    description: 'A demo of Next.js using Partial Prerendering.',
+    title: "Next.js Partial Prerendering",
+    description: "A demo of Next.js using Partial Prerendering.",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
   },
 };
 
@@ -24,7 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`[color-scheme:dark] ${GeistSans.variable}`}>
+    <html lang="en" className={`[color-scheme:dark]`}>
+      <head>
+        <GlobalStyles />
+      </head>
       <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')] pb-36">
         <Sidebar />
         <div className="lg:pl-72">
