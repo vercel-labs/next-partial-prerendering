@@ -10,7 +10,7 @@ import {
   delayRecommendedProducts,
   delayReviews,
   delayShippingEstimate,
-} from '#/lib/constants';
+} from '#/lib/delay';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
