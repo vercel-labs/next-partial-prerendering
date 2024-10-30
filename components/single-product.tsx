@@ -1,12 +1,21 @@
-import { Pricing } from "#/components/pricing";
-import type { Product } from "#/types/product";
-import { ProductRating } from "#/components/product-rating";
-import Image from "next/image";
+import { Pricing } from '#/components/pricing';
+import type { Product } from '#/types/product';
+import { ProductRating } from '#/components/product-rating';
+import Image from 'next/image';
+import { Suspense } from 'react';
+import { AddToCart } from './add-to-cart';
+import { UserSpecificDetails } from './user-details';
+import { AddToCartFromCookies } from './add-to-cart-cookies';
 
-export async function SingleProduct() {
+async function getProduct() {
+  'use cache';
   const product: Product = await fetch(
-    `https://app-router-api.vercel.app/api/products?id=1`
+    `https://app-router-api.vercel.app/api/products?id=1`,
   ).then((res) => res.json());
+  return product;
+}
+export async function SingleProduct() {
+  const product = await getProduct();
 
   return (
     <div className="grid grid-cols-4 gap-6">
@@ -60,6 +69,14 @@ export async function SingleProduct() {
 
       <div className="col-span-2 md:order-3 md:col-span-1">
         <Pricing product={product} />
+
+        <Suspense fallback={<LoadingDots />}>
+          <UserSpecificDetails productId={product.id} />
+        </Suspense>
+
+        <Suspense fallback={<AddToCart initialCartCount={0} />}>
+          <AddToCartFromCookies />
+        </Suspense>
       </div>
 
       <div className="col-span-full space-y-4 md:order-2 md:col-span-2">
@@ -74,6 +91,24 @@ export async function SingleProduct() {
           <p>{product.description}</p>
         </div>
       </div>
+    </div>
+  );
+}
+
+function LoadingDots() {
+  return (
+    <div className="text-sm">
+      <span className="space-x-0.5">
+        <span className="inline-flex animate-[loading_1.4s_ease-in-out_infinite] rounded-full">
+          &bull;
+        </span>
+        <span className="inline-flex animate-[loading_1.4s_ease-in-out_0.2s_infinite] rounded-full">
+          &bull;
+        </span>
+        <span className="inline-flex animate-[loading_1.4s_ease-in-out_0.4s_infinite] rounded-full">
+          &bull;
+        </span>
+      </span>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { ProductDeal } from '#/components/product-deal';
 import { add, formatDistanceToNow } from 'date-fns';
 import { type Dinero } from 'dinero.js';
 
-export const ProductLighteningDeal = ({
+export async function ProductLighteningDeal({
   price,
   discount,
 }: {
@@ -11,7 +11,7 @@ export const ProductLighteningDeal = ({
     amount: Dinero<number>;
     expires?: number;
   };
-}) => {
+}) {
   const date = add(new Date(), { days: discount.expires });
 
   return (
@@ -25,4 +25,4 @@ export const ProductLighteningDeal = ({
       <ProductDeal price={price} discount={discount} />
     </>
   );
-};
+}

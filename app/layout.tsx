@@ -1,19 +1,19 @@
-import { CartCountProvider } from "#/components/cart-count-context";
-import { Header } from "#/components/header";
-import { Sidebar } from "#/components/sidebar";
-import { Metadata } from "next";
-import { GlobalStyles } from "./styles";
+import { CartCountProvider } from '#/components/cart-count-context';
+import { Header } from '#/components/header';
+import { Sidebar } from '#/components/sidebar';
+import { Metadata } from 'next';
+import { GlobalStyles } from './styles';
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://partialprerendering.com"),
-  title: "Next.js Partial Prerendering",
-  description: "A demo of Next.js using Partial Prerendering.",
+  metadataBase: new URL('https://partialprerendering.com'),
+  title: 'Next.js Partial Prerendering',
+  description: 'A demo of Next.js using Partial Prerendering.',
   openGraph: {
-    title: "Next.js Partial Prerendering",
-    description: "A demo of Next.js using Partial Prerendering.",
+    title: 'Next.js Partial Prerendering',
+    description: 'A demo of Next.js using Partial Prerendering.',
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
   },
 };
 
