@@ -1,6 +1,5 @@
 import type { Review } from '#/types/review';
 import { ProductReviewCard } from '#/components/product-review-card';
-import { headers } from 'next/headers';
 import { delayReviews, withDelay } from '#/lib/delay';
 
 export async function Reviews() {
@@ -19,7 +18,7 @@ export async function Reviews() {
   );
 
   return (
-    <div className="space-y-6" data-headers={headers()}>
+    <div className="space-y-6">
       <div className="text-lg font-medium text-white">Customer Reviews</div>
       <div className="space-y-8">
         {reviews.map((review) => {

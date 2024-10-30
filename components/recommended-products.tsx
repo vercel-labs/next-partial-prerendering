@@ -1,10 +1,8 @@
 import { Product } from '#/types/product';
 import { ProductCard } from '#/components/product-card';
-import { headers } from 'next/headers';
 import { delayRecommendedProducts, withDelay } from '#/lib/delay';
 
 export async function RecommendedProducts() {
-  headers();
   let products: Product[] = await withDelay(
     fetch(
       // We intentionally delay the response to simulate a slow data
@@ -20,7 +18,7 @@ export async function RecommendedProducts() {
   );
 
   return (
-    <div className="space-y-6" data-headers={headers()}>
+    <div className="space-y-6">
       <div>
         <div className="text-lg font-medium text-white">
           Recommended Products for You
