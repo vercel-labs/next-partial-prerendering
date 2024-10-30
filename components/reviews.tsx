@@ -9,13 +9,8 @@ export async function Reviews() {
       // We intentionally delay the response to simulate a slow data
       // request that would benefit from streaming
       `https://app-router-api.vercel.app/api/reviews`,
-      {
-        // We intentionally disable Next.js Cache to better demo
-        // streaming
-        cache: 'no-store',
-      }
     ).then((res) => res.json()),
-    delayReviews
+    delayReviews,
   );
 
   return (
