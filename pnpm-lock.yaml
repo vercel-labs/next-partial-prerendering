@@ -22,10 +22,10 @@ importers:
         version: 2.0.0-alpha.8
       geist:
         specifier: 1.3.1
-        version: 1.3.1(next@15.6.0-canary.58(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713))
+        version: 1.3.1(next@15.6.0-canary.60(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713))
       next:
-        specifier: ^15.6.0-canary.58
-        version: 15.6.0-canary.58(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713)
+        specifier: 15.6.0-canary.60
+        version: 15.6.0-canary.60(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713)
       react:
         specifier: 19.0.0-rc-8b08e99e-20240713
         version: 19.0.0-rc-8b08e99e-20240713
@@ -365,8 +365,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@next/env@15.6.0-canary.58':
-    resolution: {integrity: sha512-JyYhiCaCYgLfs3a195cncgUfyATTvtIpK2L9wpka4JdJ/Cn58LxO2WRQysmWYXWjuCTgE9n4vjWDAJcWmRisiw==}
+  '@next/env@15.6.0-canary.60':
+    resolution: {integrity: sha512-VVoy8NpkI2ngEr3RsD8jzum8SbXisObkvcCMBJeiWRSMOtACIm6kbnTYjgLWeGEwHHKsVBdeJpnf558rF6ktbw==}
 
   '@next/eslint-plugin-next@15.6.0-canary.58':
     resolution: {integrity: sha512-WagG5hd/drlvGgS/tmOq+3rrOhTNKO1RuhrFiz+nNX5iONUY/mDEZwRwR805vLw5X9zbaxQFKiDQUMJopP5PKQ==}
@@ -1543,8 +1543,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  next@15.6.0-canary.58:
-    resolution: {integrity: sha512-crPQo+AxBCmmBFMpDLbFg1uH+ArvrPNkvsviM60wrlzmhNuQyIOQ0tHL7Y10BVlxqtM7esMDQnepKT1XJBqYBQ==}
+  next@15.6.0-canary.60:
+    resolution: {integrity: sha512-E5gKHda+vdACO+/Bv53V3qcMrhmhH8UuctFSbNeCvnIfPoWPEUMHCB+hok7qxRlKwclXoQ5SUgUdgi6Ayzu5uA==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
@@ -2420,7 +2420,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@next/env@15.6.0-canary.58': {}
+  '@next/env@15.6.0-canary.60': {}
 
   '@next/eslint-plugin-next@15.6.0-canary.58':
     dependencies:
@@ -3363,9 +3363,9 @@ snapshots:
 
   functions-have-names@1.2.3: {}
 
-  geist@1.3.1(next@15.6.0-canary.58(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713)):
+  geist@1.3.1(next@15.6.0-canary.60(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713)):
     dependencies:
-      next: 15.6.0-canary.58(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713)
+      next: 15.6.0-canary.60(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713)
 
   generator-function@2.0.1: {}
 
@@ -3740,11 +3740,11 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@15.6.0-canary.58(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713):
+  next@15.6.0-canary.60(@babel/core@7.28.5)(react-dom@19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713))(react@19.0.0-rc-8b08e99e-20240713):
     dependencies:
-      '@next/env': 15.6.0-canary.58
+      '@next/env': 15.6.0-canary.60
       '@swc/helpers': 0.5.15
-      caniuse-lite: 1.0.30001642
+      caniuse-lite: 1.0.30001759
       postcss: 8.4.31
       react: 19.0.0-rc-8b08e99e-20240713
       react-dom: 19.0.0-rc-8b08e99e-20240713(react@19.0.0-rc-8b08e99e-20240713)
@@ -3914,7 +3914,7 @@ snapshots:
   postcss@8.4.31:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       source-map-js: 1.2.0
 
   postcss@8.4.39:
