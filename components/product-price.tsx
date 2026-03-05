@@ -2,7 +2,7 @@ import { Product } from '#/types/product';
 import { ProductCurrencySymbol } from '#/components/product-currency-symbol';
 import { ProductDeal } from '#/components/product-deal';
 import { ProductLighteningDeal } from '#/components/product-lightening-deal';
-import { multiply, toUnit, type Dinero } from 'dinero.js';
+import { multiply, toDecimal, type Dinero } from 'dinero.js';
 
 function isDiscount(obj: any): obj is { percent: number; expires?: number } {
   return typeof obj?.percent === 'number';
@@ -45,7 +45,7 @@ export const ProductPrice = ({
         <ProductCurrencySymbol dinero={price} />
       </div>
       <div className="text-lg font-bold leading-snug text-white">
-        {toUnit(price)}
+        {toDecimal(price)}
       </div>
     </div>
   );
